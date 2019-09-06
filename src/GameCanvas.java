@@ -24,7 +24,7 @@ public class GameCanvas extends JPanel {
         g.setColor(Color.black);
         g.fillRect(0, 0, 600, 600);
         g.drawImage(this.background, 0, 0, null);
-        g.drawImage(this.playerStraight, 192, 600, null);
+        g.drawImage(this.playerStraight, 175, 500, null);
 
     }
 }
