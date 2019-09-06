@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
@@ -7,45 +8,18 @@ public class GameWindow extends JFrame {
 
     public GameWindow(){
         this.setResizable(false);
-        this.setSize(600, 600);
+        this.setSize(384, 600);
 
         this.setContentPane(this.canvas);
         this.setVisible(true);
 
-        this.addWindowListener(new WindowListener() {
+        this.addWindowListener(new WindowAdapter() {
             @Override
-            public void windowOpened(WindowEvent windowEvent) {
-
-            }
-
-            @Override
-            public void windowClosing(WindowEvent windowEvent) {
+            public void windowClosing(WindowEvent e) {
                 System.exit(0);
             }
-
-            @Override
-            public void windowClosed(WindowEvent windowEvent) {
-            }
-
-            @Override
-            public void windowIconified(WindowEvent windowEvent) {
-
-            }
-
-            @Override
-            public void windowDeiconified(WindowEvent windowEvent) {
-
-            }
-
-            @Override
-            public void windowActivated(WindowEvent windowEvent) {
-
-            }
-
-            @Override
-            public void windowDeactivated(WindowEvent windowEvent) {
-
-            }
         });
+
+
     }
 }
