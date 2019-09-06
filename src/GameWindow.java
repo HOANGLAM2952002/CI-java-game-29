@@ -19,7 +19,17 @@ public class GameWindow extends JFrame {
                 System.exit(0);
             }
         });
+    }
 
-
+    public void gameLoop(){
+        while (true){
+            this.canvas.run();
+            this.canvas.repaint();
+            try {
+                Thread.sleep(17);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
