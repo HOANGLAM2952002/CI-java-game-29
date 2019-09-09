@@ -3,7 +3,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.Random;
@@ -11,13 +10,8 @@ import java.util.Random;
 public class GameCanvas extends JPanel {
     Random rand = new Random();
 
-    Image background;
-    int backgroundX = 0;
-    int backgroundY = 600 - 3109;
-
-    Image playerStraight;
-    int playerX = 175;
-    int playerY = 500;
+    Background background;
+    Player player;
 
     Image enemyblackStraight;
     int enemyX = rand.nextInt(200);
@@ -33,15 +27,14 @@ public class GameCanvas extends JPanel {
 
     int move[] = {-5,5};
 
-    keyPressed keyPressed;
 
     public GameCanvas(){
-        this.keyPressed  = new keyPressed();
+
+        this.background = new Background();
+        this.player = new Player();
         // load image
         try {
             // try to catch read phrase
-            this.background = ImageIO.read(new File("assets/images/background/0.png"));
-            this.playerStraight = ImageIO.read(new File("assets/images/players/straight/0.png"));
             this.enemyblackStraight = ImageIO.read(new File("assets/images/enemies/level0/black/0.png"));
             this.enemyBlueStraight = ImageIO.read(new File("assets/images/enemies/level0/blue/0.png"));
             this.enemyPinkStraight = ImageIO.read(new File("assets/images/enemies/level0/pink/0.png"));
@@ -50,9 +43,10 @@ public class GameCanvas extends JPanel {
             e.printStackTrace();
         }
 
-        this.playerX = 175;
-        this.playerY = 500;
+        this.keyListener();
+    }
 
+    private void keyListener() {
         this.setFocusable(true);
         // catch event clicking buttons
         this.addKeyListener(new KeyAdapter() {
@@ -60,19 +54,22 @@ public class GameCanvas extends JPanel {
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_UP){
-                    keyPressed.upPressed = true;
+                    /**
+                     * get static from KeyPressed
+                     */
+                    KeyPressed.getInstance().upPressed = true;
                 }
 
                 if (e.getKeyCode() == KeyEvent.VK_DOWN){
-                    keyPressed.downPressed = true;
+                    KeyPressed.getInstance().downPressed = true;
                 }
 
                 if (e.getKeyCode() == KeyEvent.VK_RIGHT){
-                    keyPressed.rightPressed = true;
+                    KeyPressed.getInstance().rightPressed = true;
                 }
 
                 if (e.getKeyCode() == KeyEvent.VK_LEFT){
-                    keyPressed.leftPressed = true;
+                    KeyPressed.getInstance().leftPressed = true;
                 }
 
             }
@@ -80,19 +77,19 @@ public class GameCanvas extends JPanel {
             @Override
             public void keyReleased(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_UP){
-                    keyPressed.upPressed = false;
+                    KeyPressed.getInstance().upPressed = false;
                 }
 
                 if (e.getKeyCode() == KeyEvent.VK_DOWN){
-                    keyPressed.downPressed = false;
+                    KeyPressed.getInstance().downPressed = false;
                 }
 
                 if (e.getKeyCode() == KeyEvent.VK_RIGHT){
-                    keyPressed.rightPressed = false;
+                    KeyPressed.getInstance().rightPressed = false;
                 }
 
                 if (e.getKeyCode() == KeyEvent.VK_LEFT){
-                    keyPressed.leftPressed = false;
+                    KeyPressed.getInstance().leftPressed = false;
                 }
             }
         });
@@ -102,8 +99,8 @@ public class GameCanvas extends JPanel {
     protected void paintComponent(Graphics g) {
         g.setColor(Color.black);
         g.fillRect(0, 0, 600, 600);
-        g.drawImage(this.background, backgroundX, backgroundY, null);
-        g.drawImage(this.playerStraight, playerX, playerY, null);
+        this.background.render(g);
+        this.player.render(g);
         g.drawImage(this.enemyblackStraight, enemyX, enemyY, null);
         g.drawImage(this.enemyBlueStraight,enemyblueX, enemyblueY,null);
         g.drawImage(this.enemyPinkStraight, enemypinkX, enemypinkY, null);
@@ -157,35 +154,12 @@ public class GameCanvas extends JPanel {
     }
 
     public void run() {
-        if (backgroundY < 0){
-            backgroundY += 10;
-        } else {
-            backgroundY = 600 - 3109;
-        }
+        this.background.run();
 
-        // player
-        if (keyPressed.upPressed){
-            if (this.playerY != 0) {
-                this.playerY -= 5;
-            }
-        }
-        if (keyPressed.downPressed){
-            if (this.playerY != 500){
-                this.playerY += 5;
-            }
-        }
-        if (keyPressed.rightPressed){
-            this.playerX += 5;
-            if (this.playerX > 390){
-                this.playerX = -10;
-            }
-        }
-        if (keyPressed.leftPressed){
-            this.playerX -= 5;
-            if (this.playerX < -10){
-                this.playerX = 390;
-            }
-        }
+        /**
+         * input keyPressed into player
+         */
+        this.player.run();
         this.enemyMove();
     }
 }
