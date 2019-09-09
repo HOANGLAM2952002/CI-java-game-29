@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf343e48-2577-41b6-a060-3c686a08142a" name="Default Changelist" comment="Update: Load player move">
-      <change afterPath="$PROJECT_DIR$/src/keyPressed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI-game/GameCanvas$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI-game/GameCanvas$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI-game/GameCanvas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI-game/GameCanvas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI-game/GameWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI-game/GameWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameCanvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameCanvas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameWindow.java" afterDir="false" />
-    </list>
+    <list default="true" id="cf343e48-2577-41b6-a060-3c686a08142a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +16,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1QSoqrkZZquwgsH2pu14kBb4ROV" />
@@ -58,6 +55,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Program" />
         <item itemvalue="Application.Program" />
       </list>
     </recent_temporary>
@@ -120,6 +118,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update: Load background image" />
     <MESSAGE value="Update: Load player move" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update: Load player move" />
+    <MESSAGE value="Update: Load smooth background &amp; movements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update: Load smooth background &amp; movements" />
   </component>
 </project>
