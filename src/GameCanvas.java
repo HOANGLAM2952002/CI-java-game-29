@@ -13,7 +13,7 @@ public class GameCanvas extends JPanel {
 
     Image background;
     int backgroundX = 0;
-    int backgroundY = 0;
+    int backgroundY = 600 - 3109;
 
     Image playerStraight;
     int playerX = 175;
@@ -33,8 +33,10 @@ public class GameCanvas extends JPanel {
 
     int move[] = {-5,5};
 
+    keyPressed keyPressed;
 
     public GameCanvas(){
+        this.keyPressed  = new keyPressed();
         // load image
         try {
             // try to catch read phrase
@@ -55,105 +57,43 @@ public class GameCanvas extends JPanel {
         // catch event clicking buttons
         this.addKeyListener(new KeyAdapter() {
 
-            public void enemyMove(){
-                if (enemyX == 0){
-                    enemyX += move[1];
-                }
-                if (enemyX == 384){
-                    enemyX += move[0];
-                }
-                if (enemyY == 0){
-                    enemyY += move[1];
-                }
-                if (enemyY == 400){
-                    enemyY += move[0];
-                }
-                enemyX += move[rand.nextInt(2)];
-                enemyY += move[rand.nextInt(2)];
-
-                if (enemyblueX == 0){
-                    enemyblueX += move[1];
-                }
-                if (enemyblueX == 384){
-                    enemyblueX += move[0];
-                }
-                if (enemyblueY == 0){
-                    enemyblueY += move[1];
-                }
-                if (enemyblueY == 400){
-                    enemyblueY += move[0];
-                }
-                enemyblueX += move[rand.nextInt(2)];
-                enemyblueY += move[rand.nextInt(2)];
-
-                if (enemypinkX == 0){
-                    enemypinkX += move[1];
-                }
-                if (enemypinkX == 384){
-                    enemypinkX += move[0];
-                }
-                if (enemypinkY == 0){
-                    enemypinkY += move[1];
-                }
-                if (enemypinkY == 400){
-                    enemypinkY += move[0];
-                }
-                enemypinkX += move[rand.nextInt(2)];
-                enemypinkY += move[rand.nextInt(2)];
-            }
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_UP){
-                    if (playerY != 0){
-                        playerY -= 5;
-                        this.enemyMove();
-                    }
-                    backgroundY -= 5;
-                    this.enemyMove();
+                    keyPressed.upPressed = true;
                 }
 
                 if (e.getKeyCode() == KeyEvent.VK_DOWN){
-                    if (playerY != 500){
-                        playerY += 5;
-                        this.enemyMove();
-                    }
-                    backgroundY -= 5;
-                    this.enemyMove();
+                    keyPressed.downPressed = true;
                 }
 
                 if (e.getKeyCode() == KeyEvent.VK_RIGHT){
-                    if (playerX != 350){
-                        playerX += 5;
-                        this.enemyMove();
-                    } else {
-                        playerX = -10;
-                        this.enemyMove();
-                    }
-                    backgroundY -= 5;
-                    this.enemyMove();
+                    keyPressed.rightPressed = true;
                 }
 
                 if (e.getKeyCode() == KeyEvent.VK_LEFT){
-                    if (playerX != -10){
-                        playerX -= 5;
-                        this.enemyMove();
-                    } else {
-                        playerX = 350;
-                        this.enemyMove();
-                    }
-                    backgroundY -= 5;
-                    this.enemyMove();
-                }
-
-                if (backgroundY == -2500){
-                    backgroundY = 0;
+                    keyPressed.leftPressed = true;
                 }
 
             }
 
             @Override
             public void keyReleased(KeyEvent e) {
-                super.keyReleased(e);
+                if (e.getKeyCode() == KeyEvent.VK_UP){
+                    keyPressed.upPressed = false;
+                }
+
+                if (e.getKeyCode() == KeyEvent.VK_DOWN){
+                    keyPressed.downPressed = false;
+                }
+
+                if (e.getKeyCode() == KeyEvent.VK_RIGHT){
+                    keyPressed.rightPressed = false;
+                }
+
+                if (e.getKeyCode() == KeyEvent.VK_LEFT){
+                    keyPressed.leftPressed = false;
+                }
             }
         });
     }
@@ -169,7 +109,83 @@ public class GameCanvas extends JPanel {
         g.drawImage(this.enemyPinkStraight, enemypinkX, enemypinkY, null);
     }
 
-    public void run() {
+    public void enemyMove(){
+        if (enemyX == 0){
+            enemyX += move[1];
+        }
+        if (enemyX == 384){
+            enemyX += move[0];
+        }
+        if (enemyY == 0){
+            enemyY += move[1];
+        }
+        if (enemyY == 400){
+            enemyY += move[0];
+        }
+        enemyX += move[rand.nextInt(2)];
+        enemyY += move[rand.nextInt(2)];
 
+        if (enemyblueX == 0){
+            enemyblueX += move[1];
+        }
+        if (enemyblueX == 384){
+            enemyblueX += move[0];
+        }
+        if (enemyblueY == 0){
+            enemyblueY += move[1];
+        }
+        if (enemyblueY == 400){
+            enemyblueY += move[0];
+        }
+        enemyblueX += move[rand.nextInt(2)];
+        enemyblueY += move[rand.nextInt(2)];
+
+        if (enemypinkX == 100){
+            enemypinkX += move[1];
+        }
+        if (enemypinkX == 250){
+            enemypinkX += move[0];
+        }
+        if (enemypinkY == 0){
+            enemypinkY += move[1];
+        }
+        if (enemypinkY == 400){
+            enemypinkY += move[0];
+        }
+        enemypinkX += move[rand.nextInt(2)];
+        enemypinkY += move[rand.nextInt(2)];
+    }
+
+    public void run() {
+        if (backgroundY < 0){
+            backgroundY += 10;
+        } else {
+            backgroundY = 600 - 3109;
+        }
+
+        // player
+        if (keyPressed.upPressed){
+            if (this.playerY != 0) {
+                this.playerY -= 5;
+            }
+        }
+        if (keyPressed.downPressed){
+            if (this.playerY != 500){
+                this.playerY += 5;
+            }
+        }
+        if (keyPressed.rightPressed){
+            this.playerX += 5;
+            if (this.playerX > 390){
+                this.playerX = -10;
+            }
+        }
+        if (keyPressed.leftPressed){
+            this.playerX -= 5;
+            if (this.playerX < -10){
+                this.playerX = 390;
+            }
+        }
+        this.enemyMove();
     }
 }
