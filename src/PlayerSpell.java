@@ -2,14 +2,15 @@ import java.awt.*;
 
 public class PlayerSpell {
     Image image;
-    Player player = new Player();
     int x;
     int y;
 
     public PlayerSpell(){
         this.image = SpriteUtils.loadImage("assets/images/player-spells/a/0.png");
-        this.x = player.x;
-        this.y = player.y;
+        this.x = 0;
+        this.y = 0;
+
+        //Vector2D position - new Vector2D(0,0);
     }
 
     public void render(Graphics g){
@@ -19,4 +20,6 @@ public class PlayerSpell {
     public void run() {
         this.y -= 5;
     }
+
+
 }

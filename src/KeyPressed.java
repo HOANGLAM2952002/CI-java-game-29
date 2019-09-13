@@ -3,6 +3,7 @@ public class KeyPressed {
     boolean downPressed;
     boolean rightPressed;
     boolean leftPressed;
+    boolean shootPresed;
 
     /**
      * can access globally
@@ -14,6 +15,7 @@ public class KeyPressed {
         this.downPressed = false;
         this.rightPressed = false;
         this.leftPressed = false;
+        this.shootPresed = false;
     }
 
     public static KeyPressed getInstance(){
