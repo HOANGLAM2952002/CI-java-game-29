@@ -21,14 +21,26 @@ public class GameWindow extends JFrame {
         });
     }
 
+//    public void gameLoop(){
+//        while (true){
+//            this.canvas.run();
+//            this.canvas.repaint();
+//            try {
+//                Thread.sleep(17);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
+
     public void gameLoop(){
+        long lastTime = 0;
         while (true){
-            this.canvas.run();
-            this.canvas.repaint();
-            try {
-                Thread.sleep(17);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            long currentTime = System.nanoTime();
+            if (currentTime - lastTime >= 17_000_000) {
+                this.canvas.run();
+                this.canvas.repaint();
+                lastTime = currentTime;
             }
         }
     }
