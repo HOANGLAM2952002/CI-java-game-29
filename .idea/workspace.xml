@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf343e48-2577-41b6-a060-3c686a08142a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Clamp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI-game/GameCanvas$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI-game/GameCanvas$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CI-game/GameCanvas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI-game/GameCanvas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameCanvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameCanvas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EnemyBlack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EnemyBlack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EnemyBlue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EnemyBlue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EnemyPink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EnemyPink.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1QSoqrkZZquwgsH2pu14kBb4ROV" />
@@ -54,6 +63,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Program" />
         <item itemvalue="Application.Program" />
       </list>
     </recent_temporary>
@@ -90,7 +100,35 @@
       <option name="project" value="LOCAL" />
       <updated>1567781530924</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update: Load player move">
+      <created>1567961283685</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1567961283685</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Update: Load smooth background &amp; movements">
+      <created>1568036302434</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1568036302434</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update: Refractor and add keyPressed class">
+      <created>1568040685175</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1568040685175</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Update: Refractor and add keyPressed class">
+      <created>1568376854727</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1568376854727</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -109,6 +147,20 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update: Load background image" />
     <MESSAGE value="Update: Load player move" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update: Load player move" />
+    <MESSAGE value="Update: Load smooth background &amp; movements" />
+    <MESSAGE value="Update: Refractor and add keyPressed class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update: Refractor and add keyPressed class" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/EnemyBlue.java</url>
+          <line>6</line>
+          <properties field="rand" class="EnemyBlue" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
