@@ -12,18 +12,11 @@ public class GameCanvas extends JPanel {
 
     Background background;
     Player player;
+    EnemyBlack enemyBlack;
+    EnemyBlue enemyBlue;
+    EnemyPink enemyPink;
 
-    Image enemyblackStraight;
-    int enemyX = rand.nextInt(200);
-    int enemyY = rand.nextInt(200);
 
-    Image enemyBlueStraight;
-    int enemyblueX = rand.nextInt(200);
-    int enemyblueY = rand.nextInt(200);
-
-    Image enemyPinkStraight;
-    int enemypinkX = rand.nextInt(200);
-    int enemypinkY = rand.nextInt(200);
 
     int move[] = {-5,5};
 
@@ -32,16 +25,16 @@ public class GameCanvas extends JPanel {
 
         this.background = new Background();
         this.player = new Player();
-        // load image
-        try {
-            // try to catch read phrase
-            this.enemyblackStraight = ImageIO.read(new File("assets/images/enemies/level0/black/0.png"));
-            this.enemyBlueStraight = ImageIO.read(new File("assets/images/enemies/level0/blue/0.png"));
-            this.enemyPinkStraight = ImageIO.read(new File("assets/images/enemies/level0/pink/0.png"));
-        } catch (IOException e) {
-            // print errors if try wrong
-            e.printStackTrace();
-        }
+        this.enemyBlack = new EnemyBlack();
+        this.enemyBlue = new EnemyBlue();
+        this.enemyPink = new EnemyPink();
+//        // load image
+//        try {
+//            // try to catch read phrase
+//        } catch (IOException e) {
+//            // print errors if try wrong
+//            e.printStackTrace();
+//        }
 
         this.keyListener();
     }
@@ -101,57 +94,11 @@ public class GameCanvas extends JPanel {
         g.fillRect(0, 0, 600, 600);
         this.background.render(g);
         this.player.render(g);
-        g.drawImage(this.enemyblackStraight, enemyX, enemyY, null);
-        g.drawImage(this.enemyBlueStraight,enemyblueX, enemyblueY,null);
-        g.drawImage(this.enemyPinkStraight, enemypinkX, enemypinkY, null);
+        this.enemyBlack.render(g);
+        this.enemyBlue.render(g);
+        this.enemyPink.render(g);
     }
 
-    public void enemyMove(){
-        if (enemyX == 0){
-            enemyX += move[1];
-        }
-        if (enemyX == 384){
-            enemyX += move[0];
-        }
-        if (enemyY == 0){
-            enemyY += move[1];
-        }
-        if (enemyY == 400){
-            enemyY += move[0];
-        }
-        enemyX += move[rand.nextInt(2)];
-        enemyY += move[rand.nextInt(2)];
-
-        if (enemyblueX == 0){
-            enemyblueX += move[1];
-        }
-        if (enemyblueX == 384){
-            enemyblueX += move[0];
-        }
-        if (enemyblueY == 0){
-            enemyblueY += move[1];
-        }
-        if (enemyblueY == 400){
-            enemyblueY += move[0];
-        }
-        enemyblueX += move[rand.nextInt(2)];
-        enemyblueY += move[rand.nextInt(2)];
-
-        if (enemypinkX == 100){
-            enemypinkX += move[1];
-        }
-        if (enemypinkX == 250){
-            enemypinkX += move[0];
-        }
-        if (enemypinkY == 0){
-            enemypinkY += move[1];
-        }
-        if (enemypinkY == 400){
-            enemypinkY += move[0];
-        }
-        enemypinkX += move[rand.nextInt(2)];
-        enemypinkY += move[rand.nextInt(2)];
-    }
 
     public void run() {
         this.background.run();
@@ -160,6 +107,8 @@ public class GameCanvas extends JPanel {
          * input keyPressed into player
          */
         this.player.run();
-        this.enemyMove();
+        this.enemyBlack.run();
+        this.enemyBlue.run();
+        this.enemyPink.run();
     }
 }
