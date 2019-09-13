@@ -16,6 +16,8 @@ public class GameCanvas extends JPanel {
     EnemyBlue enemyBlue;
     EnemyPink enemyPink;
 
+    PlayerSpell playerSpell;
+
 
 
     int move[] = {-5,5};
@@ -28,6 +30,10 @@ public class GameCanvas extends JPanel {
         this.enemyBlack = new EnemyBlack();
         this.enemyBlue = new EnemyBlue();
         this.enemyPink = new EnemyPink();
+
+        this.playerSpell = new PlayerSpell();
+        this.playerSpell.x = this.player.x;
+        this.playerSpell.y = this.player.y;
 //        // load image
 //        try {
 //            // try to catch read phrase
@@ -97,6 +103,8 @@ public class GameCanvas extends JPanel {
         this.enemyBlack.render(g);
         this.enemyBlue.render(g);
         this.enemyPink.render(g);
+
+        this.playerSpell.render(g);
     }
 
 
@@ -110,5 +118,7 @@ public class GameCanvas extends JPanel {
         this.enemyBlack.run();
         this.enemyBlue.run();
         this.enemyPink.run();
+
+        this.playerSpell.run();
     }
 }

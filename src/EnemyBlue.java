@@ -8,11 +8,13 @@ public class EnemyBlue {
     Random rand = new Random();
     int x = rand.nextInt(200);
     int y = rand.nextInt(200);
+    int speed = 5;
 
     public EnemyBlue(){
         this.image = SpriteUtils.loadImage("assets/images/enemies/level0/blue/0.png");
         this.x = rand.nextInt(200);
         this.y = rand.nextInt(200);
+        this.speed = 5;
     }
 
     public void render(Graphics g){
@@ -20,6 +22,9 @@ public class EnemyBlue {
     }
 
     public void run(){
+        /**
+         * consider using trigonometry to move Enemy
+         */
         if (x == 0){
             x += move[1];
         }
@@ -34,5 +39,8 @@ public class EnemyBlue {
         }
         x += move[rand.nextInt(2)];
         y += move[rand.nextInt(2)];
+
+//        this.y += speed;
+
     }
 }

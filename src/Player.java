@@ -24,25 +24,22 @@ public class Player {
      */
     public void run() {
         if (KeyPressed.getInstance().upPressed){
-            if (this.y > 300) {
-                this.y -= 5;
-            }
+            this.y -= 5;
         }
         if (KeyPressed.getInstance().downPressed){
-            if (this.y < 500){
-                this.y += 5;
-            }
+            this.y += 5;
         }
         if (KeyPressed.getInstance().rightPressed){
-            if (this.x < 340){
-                this.x += 5;
-            }
+            this.x += 5;
         }
         if (KeyPressed.getInstance().leftPressed){
-            if (this.x > 0){
-                this.x -= 5;
-            }
+            this.x -= 5;
         }
+
+        this.x = Utils.clamp(this.x, 0, 384 - 44);
+        this.y = Utils.clamp(this.y, 0, 600 - 100);
+
+
     }
 }
 

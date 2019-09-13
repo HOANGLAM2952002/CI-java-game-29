@@ -2,21 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf343e48-2577-41b6-a060-3c686a08142a" name="Default Changelist" comment="">
-<<<<<<< HEAD
-      <change afterPath="$PROJECT_DIR$/src/Clamp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PlayerSpell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI-game/EnemyBlack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI-game/EnemyBlack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI-game/EnemyBlue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI-game/EnemyBlue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI-game/EnemyPink.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI-game/EnemyPink.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CI-game/GameCanvas$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI-game/GameCanvas$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CI-game/GameCanvas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI-game/GameCanvas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI-game/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI-game/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EnemyBlack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EnemyBlack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EnemyBlue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EnemyBlue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EnemyPink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EnemyPink.java" afterDir="false" />
-=======
-      <change afterPath="$PROJECT_DIR$/src/EnemyBlack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EnemyBlue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EnemyPink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameCanvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameCanvas.java" afterDir="false" />
->>>>>>> homework
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +128,6 @@
       <option name="project" value="LOCAL" />
       <updated>1568040685175</updated>
     </task>
-<<<<<<< HEAD
     <task id="LOCAL-00007" summary="Update: Refractor and add keyPressed class">
       <created>1568376854727</created>
       <option name="number" value="00007" />
@@ -138,9 +136,6 @@
       <updated>1568376854727</updated>
     </task>
     <option name="localTasksCounter" value="8" />
-=======
-    <option name="localTasksCounter" value="7" />
->>>>>>> homework
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,7 +157,6 @@
     <MESSAGE value="Update: Load smooth background &amp; movements" />
     <MESSAGE value="Update: Refractor and add keyPressed class" />
     <option name="LAST_COMMIT_MESSAGE" value="Update: Refractor and add keyPressed class" />
-<<<<<<< HEAD
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -175,7 +169,5 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-=======
->>>>>>> homework
   </component>
 </project>
