@@ -2,18 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf343e48-2577-41b6-a060-3c686a08142a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/bases/BoxCollider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bases/FrameCounter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bases/GameObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entities/EnemyBullet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entities/EnemySpawner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI-game/EnemyBlack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI-game/EnemyBlack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI-game/EnemyBlue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI-game/EnemyBlue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI-game/EnemyPink.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI-game/EnemyPink.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI-game/GameCanvas$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI-game/GameCanvas$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI-game/GameCanvas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI-game/GameCanvas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI-game/KeyPressed.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI-game/KeyPressed.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI-game/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI-game/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameCanvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameCanvas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/KeyPressed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/KeyPressed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PlayerSpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlayerSpell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI-game/Background.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI-game/EnemyBlack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI-game/EnemyBlue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI-game/EnemyPink.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI-game/GameCanvas$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI-game/GameCanvas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI-game/GameWindow$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI-game/GameWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI-game/KeyPressed.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI-game/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI-game/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI-game/Program.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI-game/SpriteUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Background.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Background.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EnemyBlack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/EnemyBlack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EnemyBlue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/EnemyBlue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EnemyPink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/EnemyPink.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameCanvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameCanvas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KeyPressed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bases/KeyPressed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PlayerSpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/PlayerSpell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SpriteUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bases/SpriteUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bases/Utils.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +42,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin File" />
         <option value="Class" />
       </list>
     </option>
@@ -140,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568382069978</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Update: Add class Enemy and PlayerSpell">
+      <created>1568386383526</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1568386383526</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -163,17 +189,5 @@
     <MESSAGE value="Update: Refractor and add keyPressed class" />
     <MESSAGE value="Update: Add class Enemy and PlayerSpell" />
     <option name="LAST_COMMIT_MESSAGE" value="Update: Add class Enemy and PlayerSpell" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/EnemyBlue.java</url>
-          <line>6</line>
-          <properties field="rand" class="EnemyBlue" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

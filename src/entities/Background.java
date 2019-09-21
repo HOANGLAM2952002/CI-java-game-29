@@ -1,39 +1,32 @@
+package entities;
+
+import bases.GameObject;
+import bases.SpriteUtils;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
-public class Background {
-    Image image;
-    int x;
-    int y = 600 - 3109;
-
+public class Background extends GameObject {
     /**
      * Contractor load image
      */
     public Background(){
         this.image = SpriteUtils.loadImage("assets/images/background/0.png");
         // background
-        this.x = 0;
-        this.y = 600 - 3109;
-    }
-
-    /**
-     * Render image
-     * @param g
-     */
-    public void render(Graphics g) {
-        g.drawImage(this.image, x, y, null);
+        this.position.x = 0;
+        this.position.y = 600 - 3109;
     }
 
     /**
      * Handle background logic
      */
     public void run() {
-        if (y < 0){
-            y += 10;
+        if (this.position.y < 0){
+            this.position.y += 10;
         } else {
-            y = 600 - 3109;
+            this.position.y = 600 - 3109;
         }
     }
 }

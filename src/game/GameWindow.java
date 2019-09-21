@@ -1,3 +1,7 @@
+package game;
+
+import bases.GameObject;
+
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -38,7 +42,7 @@ public class GameWindow extends JFrame {
         while (true){
             long currentTime = System.nanoTime();
             if (currentTime - lastTime >= 17_000_000) {
-                this.canvas.run();
+                GameObject.runAll();
                 this.canvas.repaint();
                 lastTime = currentTime;
             }

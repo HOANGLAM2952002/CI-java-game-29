@@ -1,37 +1,39 @@
+package entities;
+
+import bases.*;
+
+
 import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Player {
-    Image image;
-    int x = 175;
-    int y = 500;
-
+public class Player extends GameObject {
     long cnt = 0;
     ArrayList<PlayerSpell> playerSpells;
 
 
     public Player(){
         this.image = SpriteUtils.loadImage("assets/images/players/straight/0.png");
-        this.x = 175;
-        this.y = 500;
+        this.position = new Vector2D(175, 500);
         this.cnt = 0;
         playerSpells = new ArrayList<>();
+        //this.boxCollider = new BoxCollider(this, 32, 48);
     }
 
-    /**
-     * run function run() of each spell
-     * @param g
-     */
-    public void render(Graphics g) {
-        g.drawImage(this.image, x, y, null);
-        for (int i = 0; i < this.playerSpells.size(); i++){
-            PlayerSpell playerSpell = this.playerSpells.get(i);
-            playerSpell.render(g);
-        }
-    }
+//    /**
+//     * run function run() of each spell
+//     * @param g
+//     */
+//    public void render(Graphics g) {
+//        g.drawImage(this.image, x, y, null);
+//        for (int i = 0; i < this.playerSpells.size(); i++){
+//            PlayerSpell playerSpell = this.playerSpells.get(i);
+//            playerSpell.render(g);
+//        }
+//    }
 
     /**
      * input keyPressed from GameCanvas
@@ -39,16 +41,16 @@ public class Player {
      */
     public void run() {
         if (KeyPressed.getInstance().upPressed){
-            this.y -= 5;
+            position.y -= 5;
         }
         if (KeyPressed.getInstance().downPressed){
-            this.y += 5;
+            position.y += 5;
         }
         if (KeyPressed.getInstance().rightPressed){
-            this.x += 5;
+            position.x += 5;
         }
         if (KeyPressed.getInstance().leftPressed){
-            this.x -= 5;
+            position.x -= 5;
         }
 
         if (KeyPressed.getInstance().shootPresed && cnt >= 20){
@@ -58,8 +60,8 @@ public class Player {
             cnt++;
         }
 
-        this.x = Utils.clamp(this.x, 0, 384 - 44);
-        this.y = Utils.clamp(this.y, 0, 600 - 100);
+        this.position.x = Utils.clamp(this.position.x, 0, 384 - 44);
+        this.position.y = Utils.clamp(this.position.y, 0, 600 - 100);
 
         for (int i = 0; i < this.playerSpells.size(); i++){
             PlayerSpell playerSpell = this.playerSpells.get(i);
@@ -73,9 +75,9 @@ public class Player {
      * add into array list playerSpells
      */
     private void castSpell() {
-        PlayerSpell newSpell = new PlayerSpell();
-        newSpell.x = this.x;
-        newSpell.y = this.y;
+        PlayerSpell newSpell = GameObject.recycle(PlayerSpell.class);
+        newSpell.position.x = this.position.x;
+        newSpell.position.y = this.position.y;
         playerSpells.add(newSpell);
     }
 }

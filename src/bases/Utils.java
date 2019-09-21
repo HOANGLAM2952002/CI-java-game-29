@@ -1,5 +1,6 @@
+package  bases;
 public class Utils {
-    public static int clamp(int value, int min, int max){
+    public static float clamp(float value, float min, float max){
         if (value < min){
             return min;
         }

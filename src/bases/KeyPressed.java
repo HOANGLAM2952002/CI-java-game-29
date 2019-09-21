@@ -1,9 +1,12 @@
+package bases;
+
 public class KeyPressed {
-    boolean upPressed;
-    boolean downPressed;
-    boolean rightPressed;
-    boolean leftPressed;
-    boolean shootPresed;
+    public boolean upPressed;
+    public boolean downPressed;
+    public boolean rightPressed;
+    public boolean leftPressed;
+    public boolean shootPresed;
+
 
     /**
      * can access globally

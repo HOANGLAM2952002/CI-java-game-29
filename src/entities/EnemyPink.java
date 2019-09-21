@@ -1,9 +1,16 @@
+package entities;
+
+import bases.BoxCollider;
+import bases.GameObject;
+import bases.SpriteUtils;
+import bases.Vector2D;
+
+import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 
-public class EnemyPink {
+public class EnemyPink extends GameObject {
     int move[] = {-5,5};
-    Image image;
     Image state0;
     Image state1;
     Image state2;
@@ -15,14 +22,12 @@ public class EnemyPink {
 
     public EnemyPink(){
         this.image = SpriteUtils.loadImage("assets/images/enemies/level0/pink/0.png");
-        this.x = rand.nextInt(200);
-        this.y = rand.nextInt(200);
+        this.boxCollider = new BoxCollider(this, 28,28);
+        this.image = SpriteUtils.loadImage("assets/images/enemies/level0/pink/0.png");
+        this.position = new Vector2D((float) Math.random() * 384, 0);
     }
 
-    public void render(Graphics g){
-        g.drawImage(this.image, x, y, null);
-    }
-
+    @Override
     public void run(){
         /**
          * consider using trigonometry to move Enemy

@@ -1,10 +1,14 @@
-import javax.imageio.ImageIO;
+package game;
+
+import bases.GameObject;
+import bases.KeyPressed;
+import entities.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.io.File;
-import java.io.IOException;
+
 import java.util.Random;
 
 public class GameCanvas extends JPanel {
@@ -15,22 +19,18 @@ public class GameCanvas extends JPanel {
     EnemyBlack enemyBlack;
     EnemyBlue enemyBlue;
     EnemyPink enemyPink;
-
-
-
-
-
+    EnemySpawner enemySpawner;
     int move[] = {-5,5};
 
-
     public GameCanvas(){
-
         this.background = new Background();
         this.player = new Player();
         this.enemyBlack = new EnemyBlack();
         this.enemyBlue = new EnemyBlue();
         this.enemyPink = new EnemyPink();
 
+        this.enemySpawner = new EnemySpawner();
+        this.player = GameObject.recycle(Player.class);
 //        // load image
 //        try {
 //            // try to catch read phrase
@@ -102,26 +102,7 @@ public class GameCanvas extends JPanel {
     protected void paintComponent(Graphics g) {
         g.setColor(Color.black);
         g.fillRect(0, 0, 600, 600);
-        this.background.render(g);
-        this.player.render(g);
-        this.enemyBlack.render(g);
-        this.enemyBlue.render(g);
-        this.enemyPink.render(g);
-
+        GameObject.renderAll(g);
     }
 
-
-    public void run() {
-        this.background.run();
-
-        /**
-         * input keyPressed into player
-         */
-        this.player.run();
-        this.enemyBlack.run();
-        this.enemyBlue.run();
-        this.enemyPink.run();
-
-
-    }
 }
